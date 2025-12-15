@@ -1,6 +1,7 @@
 streamlit
 plotly 
 pandas
+streamlit-folium
 folium
 kaggle
 kagglehub
