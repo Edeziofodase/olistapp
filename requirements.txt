@@ -1,1 +1,7 @@
 streamlit
+pandas
+folium
+kaggle
+kagglehub
+plotly
+streamlit-folium
