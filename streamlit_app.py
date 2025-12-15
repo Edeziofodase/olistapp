@@ -129,7 +129,7 @@ for file_name, df in dfs.items():
     })
 
 files_df = pd.DataFrame(files_info)
-st.dataframe(files_df, use_container_width=True, hide_index=True)
+st.dataframe(files_df, width='stretch', hide_index=True)
 
 # ========== MAPA DE GEOLOCALIZAÇÃO ==========
 st.markdown("---")
@@ -196,7 +196,7 @@ if orders_df is not None:
             st.bar_chart(status_counts.set_index('Status'))
         
         with col2:
-            st.dataframe(status_counts, use_container_width=True)
+            st.dataframe(status_counts, width='stretch')
 
 
 # ========== ANÁLISE DE TEMPO DE ENTREGA ==========
@@ -296,7 +296,7 @@ if orders_df is not None:
             }
             
             estatisticas_df = pd.DataFrame(estatisticas)
-            st.dataframe(estatisticas_df, use_container_width=True, hide_index=True)
+            st.dataframe(estatisticas_df, width='stretch', hide_index=True)
             
             col1, col2 = st.columns(2)
             
@@ -332,7 +332,7 @@ if orders_df is not None:
                     boxmode='group'  # Coloca os boxplots lado a lado
                 )
                 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
             
             with col2:
                 # Categorização das entregas
@@ -351,7 +351,7 @@ if orders_df is not None:
                 ).round(1)
                 
                 st.write("**Categorização das Entregas:**")
-                st.dataframe(categoria_counts, use_container_width=True, hide_index=True)
+                st.dataframe(categoria_counts, width='stretch', hide_index=True)
             
             # Análise mensal
             st.subheader("**📅 Tendência Mensal de Tempos de Entrega:**")
@@ -374,7 +374,7 @@ if orders_df is not None:
                 markers=True
             )
             fig_tendencia.update_layout(xaxis_tickangle=-45)
-            st.plotly_chart(fig_tendencia, use_container_width=True)
+            st.plotly_chart(fig_tendencia, width='stretch')
             
             # Amostra de dados
             with st.expander("🔍 Ver Amostra dos Dados Calculados"):
@@ -383,7 +383,7 @@ if orders_df is not None:
                     'order_delivered_customer_date', 'order_estimated_delivery_date',
                     'tempo_real_dias', 'tempo_estimado_dias', 'diferenca_dias'
                 ]].head(10)
-                st.dataframe(amostra, use_container_width=True)
+                st.dataframe(amostra, width='stretch')
             
         else:
             st.warning("Nenhum pedido entregue encontrado para análise de tempo.")
